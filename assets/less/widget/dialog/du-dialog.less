@@ -1,0 +1,154 @@
+@import "../../base/fn";
+
+.du-dialog{
+    position: fixed;
+    width: @duDialogWidth;
+    background-color: @duDialogBackgroundColor;
+    text-align: center;
+    border-radius: @duDialogborderRadius;
+    font-size: @duDialogFontSize;
+    line-height: @duDialogLineHeight;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    a{
+        font-size: @duDialogFontSize;
+    }
+
+    .du-dialog-hd{
+        padding-top: @duDialogHdPaddingTop;
+        margin-bottom: @duDialogHdMarginBottom;
+    }
+
+    .du-dialog-bd{
+        padding: @duDialogBdPadding;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    
+    .du-dialog-hd + .du-dialog-bd{
+        color: @duDialogBdColor;
+        font-size: @duDialogBdFontSize;
+    }
+
+    .du-dialog-ft {
+        position: relative;
+        line-height: @duDialogFtLineHeight; 
+        display: flex;
+        a {
+            display: block;
+            position: relative;
+            flex: 1;
+            color: @duDialogLinkColor;
+            text-decoration: none;
+            &:active {
+                // background-color: transparent;
+            }
+        }
+        &:after {
+            content: " ";
+            .setTopLine(@duDialogLineColor);
+        }
+        
+        & {
+            a {
+                &:after {
+                    content: " ";
+                    .setLeftLine(@duDialogLineColor);
+                }
+                &:first-child {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .du-dialog-btn {
+        &.du-dialog-btn-default {
+            color: @duDialogButtonDefaultColor;
+        }
+        &.du-dialog-btn-primary {
+            color: @duDialogButtonPrimaryColor;
+        }
+    }
+
+    &.du-dialog-zoom-in{
+        // transform-origin:-50% -50%;
+        // transform:translate(-50%,-50%) scale(1);
+    }
+
+    /*== toast ==*/
+    &.du-dialog-toast {
+        font-size: @duToastFontSize;
+        background-color: @duToastBackgroundColor;
+        border: none;
+    }
+    &.du-dialog-toast .du-dialog-bd {
+        padding: @duToastBdPadding;
+        color: @duToastColor;
+    }
+
+    /*==du-dialog-loading==*/
+    &.du-dialog-loading{
+        width: auto;
+        background-color: transparent;
+        border-radius: 0;
+        border:none;
+        text-align:center;
+        .du-dialog-bd{
+            padding:0;
+        }
+
+        .thumb-outer-a {
+            background:data-uri('image/jpeg;base64','../../assets/img/du-loading.png') no-repeat;
+            width :240px;
+            height:210px;
+            position:relative;
+            overflow:hidden;
+            .thumb-inner {
+                    width:60px;
+                    height:12px;
+                    position:absolute;
+                    bottom:36px;
+                    left:92px;
+                    overflow: hidden;
+                &:after {
+                    width:60px;
+                    height:12px;
+                    position:absolute;
+                    bottom:0;
+                    left:0;        
+                    content: " ";
+                    background:data-uri('image/jpeg;base64','../../assets/img/du-loading2.png') no-repeat;
+                    animation:du-loading-keyframe 2s infinite linear;
+                }
+            }         
+        }
+
+
+    }
+
+}
+
+@keyframes du-loading-keyframe {
+    0% {
+        transform:translate(-48px);
+    }
+    32.99% {
+        transform:translate(-48px);
+    }
+    33% {
+        transform:translate(-24px);
+    }
+    65.99% {
+        transform:translate(-24px);
+    }
+    66% {
+        transform:rotate(0);
+    }
+    99.99% {
+        transform:rotate(0);
+    }
+}

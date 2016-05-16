@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delta UI</title>
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=750,user-scalable=no">
+    <link rel="stylesheet" href="/assets/css/delta.css" />
+    <script src="/assets/js/lib/require.js"></script>
+    <script src="/assets/js/lib/zepto.js"></script>
+    <script src="/assets/js/delta.js"></script>
+</head>
+<style>
+/* 
+.du-app{-webkit-overflow-scrolling:touch;}
+ */
+
+.delta-bx .delta-hd{line-height:150px;font-size:52px;color:#E94643;text-align:center}
+
+@keyframes slideIn{from{transform:translate3d(100%, 0, 0);opacity:0;}
+    to{transform:translate3d(0, 0, 0);opacity:1;}
+}
+@keyframes slideOut{from{transform:translate3d(0, 0, 0);opacity:1;}
+    to{transform:translate3d(100%, 0, 0);opacity:0;}
+}
+.enter,
+.leave{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;}
+.enter{animation:slideIn .2s forwards;}
+.leave{animation:slideOut .25s forwards;}
+</style>
+<body>
+<div id="du-app" class="du-app"></div>
+<% include _home.html %>
+<% include _button.html %>
+<% include _dialog.html %>
+<% include _toast.html %>
+<% include _list.html %>
+<% include _panel.html %>
+<% include _animation.html %>
+<% include _flex.html %>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
