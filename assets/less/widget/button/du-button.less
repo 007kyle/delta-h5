@@ -1,0 +1,80 @@
+@import "../../base/fn";
+
+.du-button{
+    border:none;
+    display:block;
+    overflow:hidden;
+    text-decoration:none;
+    text-align:center;
+    font-size:@duButtonFontSize;
+    color:@duButtonFontColor;
+    background:@duButtonBg;
+    line-height:@duButtonHeight;
+    min-height:@duButtonHeight;
+    /*取消ios的自带样式*/
+    -webkit-appearance:none;
+    &.du-button-inline{
+        display:inline-block;
+    }
+}
+
+/*gap between btn*/
+.du-button + .du-button {
+    margin-top: @duButtonDefaultGap;
+}
+
+.du-button-primary{
+    color:@duButtonFontPrimaryColor;
+    background-color:@duButtonPrimaryBg;
+}
+
+.du-button-danger{
+    background-color:@duButtonDangerBg;
+    color:@duButtonFontDangerColor;
+}
+
+.du-button-default{
+    color:@duButtonFontDefaultColor;
+    background-color:@duButtonDefaultBg;
+}
+
+/*== hollow ==*/
+[class*="du-button-hollow"]{
+    background-color:transparent;
+}
+
+.du-button-hollow-primary{
+    color:@duButtonFontHollowPrimaryColor;
+    background-color:@duButtonHollowPrimaryBg;
+    border:1px solid @duButtonHollowPrimaryBorderColor;
+}
+
+.du-button-hollow-danger{
+    color:@duButtonFontHollowPrimaryColor;
+    background-color:@duButtonHollowPrimaryBg;
+    border:1px solid @duButtonHollowPrimaryBorderColor;
+}
+
+.du-button-hollow-default{
+    color:@duButtonFontHollowDefaultColor;
+    background-color:@duButtonHollowDefaultBg;
+    border:1px solid @duButtonHollowDefaultBorderColor;
+}
+
+/*==du-button-mini==*/
+.du-button-mini{
+    font-size:@duButtonMiniFontFontSize;
+    line-height:@duButtonMiniFontHeight;
+    min-height:@duButtonMiniFontHeight;
+}
+/*==du-button-large==*/
+.du-button-large{
+    font-size:@duButtonLargeFontFontSize;
+    line-height:@duButtonLargeFontHeight;
+    min-height:@duButtonLargeFontHeight;
+}
+
+/*== disabled end ==*/
+.du-button-disabled{
+    color:@duButtonDisabledFontColor;
+}

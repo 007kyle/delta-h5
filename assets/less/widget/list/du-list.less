@@ -1,0 +1,39 @@
+@import "../../base/fn";
+
+.du-list{
+
+    .du-item{
+        position: relative;
+        min-height: 88px;
+        padding: 10px 30px;
+        &:after {
+            .setBottomLine(#d9dfe8);
+            left: 30px;
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+        .du-item-after .icon-arrow-right{
+            font-size: 28px;
+            color: #8994a5;
+        }
+    }
+
+    .du-item,
+    .du-item-link>a{
+        align-items: center;
+        display: flex;
+    }
+
+    .du-item-link>a{
+        width: 100%
+    }
+
+    .du-item-title{
+        flex: 1;
+        padding-right: 10px;
+    }
+
+}

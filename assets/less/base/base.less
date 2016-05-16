@@ -1,0 +1,87 @@
+@import "fn";
+
+select,
+input,
+textarea{appearance:none}
+select{background-color:transparent}
+input{border-radius:0}
+a{text-decoration:none;color:@globalLinkColor}
+html,body{
+    .setFull();
+}
+html{
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    line-height: 1.6;
+    font-family:@globalFont;
+    font-size:@globalFontSize;
+    background-color:@pageDefaultBackgroundColor;
+    color:@globalTextColor;
+    // margin:0 auto;
+    -webkit-user-select:none;
+    // 隐藏被旋转背面
+    -webkit-backface-visibility:hidden;
+    // 灰度平滑
+    -webkit-font-smoothing:antialiased;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+
+.du-app{
+    .setFull();
+
+    [class|=du-page]{
+        display: flex;
+        flex-direction: column;
+        .setFull();
+    }
+    .page-hd{
+       flex: 0 0 auto; 
+    }
+    .page-bd{
+        // max-height: 100%;
+        // height: 100%;
+        flex: 1 1 auto;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }   
+}
+
+.du-rotate-90{
+    transform: rotate(90deg)
+}
+
+.du-rotate-180{
+    transform: rotate(180deg)
+}
+
+.du-rotate-270{
+    transform: rotate(270deg)
+}
+
+
+@top : 15px;
+@left: @top*2;
+
+.setOneLine(@c: #C7C7C7) {
+    color: @c;
+    width: 100%;
+    height: 1px;
+}
+.finance{
+    margin-top : @top;
+    margin-left: @left;
+    -webkit-transition : width 2s;
+    .setOneLine();
+    a{
+        color:red;
+    }
+    &.test3{
+        .setOneLine(#333);
+        color:orange;
+    }
+    .bg{
+        background:data-uri('image/jpeg;base64','../../assets/img/du-loading.png');
+    }
+}
