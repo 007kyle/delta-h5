@@ -5,15 +5,11 @@
     <title>Delta UI</title>
     <meta name="viewport" content="target-densitydpi=device-dpi,width=750,user-scalable=no">
     <link rel="stylesheet" href="/assets/css/delta.css" />
-    <script src="/assets/js/lib/require.js"></script>
-    <script src="/assets/js/lib/zepto.js"></script>
-    <script src="/assets/js/delta.js"></script>
 </head>
 <style>
 /* 
 .du-app{-webkit-overflow-scrolling:touch;}
  */
-
 .delta-bx .delta-hd{line-height:150px;font-size:52px;color:#E94643;text-align:center}
 
 @keyframes slideIn{from{transform:translate3d(100%, 0, 0);opacity:0;}
@@ -39,6 +35,18 @@
 <% include _flex.html %>
 <% include _roll.html %>
 
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="/assets/js/lib/require.js"></script>
+<script src="/assets/js/lib/zepto.js"></script>
+<script src="/assets/js/lib/metaHandler.js"></script>
+<script src="/assets/js/delta.js"></script>
+
+<script>
+// Fix viewport width;
+(new MetaHandler()).fixViewportWidth();
+
+// DEBUG
+document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+</script>
+
 </body>
 </html>
