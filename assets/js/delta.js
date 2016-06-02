@@ -154,6 +154,15 @@ require([
                 }
             };
 
+            // Roll
+            var roll = {
+                url: '/roll',
+                className: 'roll',
+                render: function () {
+                    return $('#tpl-roll').html();
+                }
+            };
+
             router.push(home)
                 .push(button)
                 .push(dialog)
@@ -162,6 +171,7 @@ require([
                 .push(panel)
                 .push(animation)
                 .push(flex)
+                .push(roll)
                 .setDefault('/')
                 .init();
         },

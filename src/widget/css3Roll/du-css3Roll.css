@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 2rem;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+a:link {
+    text-decoration: none;
+    color: #000;
+}
+.rollBox {
+    height: 2rem;
+    line-height: 2rem;
+    clear: both;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-points-x: repeat(100%);
+    scroll-snap-type: mandatory;
+}
